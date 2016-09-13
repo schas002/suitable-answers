@@ -71,7 +71,9 @@ function pickMessage(msg, data) {
       possibleAnswers.push(data[i][1]);
     }
   }
-  return possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)];
+  return possibleAnswers.length ? 
+         possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)] :
+         "Huh?";
 }
 
 function respond(msg) {

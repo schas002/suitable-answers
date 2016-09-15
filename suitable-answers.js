@@ -66,7 +66,7 @@ function neutraliseMessage(msg) { return msg.toLowerCase().replace(/[^a-z0-9 ]/g
 function pickMessage(msg, data) {
   var neutralisedMessage = neutraliseMessage(msg);
   var possibleAnswers = [];
-  for(var i = 0; i < data.length; i++) {
+  for(var i = 0; i < (data.length - 1); i++) {
     if(levenshtein(neutralisedMessage, data[i][0]) < threshold) {
       possibleAnswers.push(data[i][1]);
     }
